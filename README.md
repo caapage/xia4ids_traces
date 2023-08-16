@@ -12,41 +12,14 @@ Parts of this code were modified from Pixie Acquisition and Analysis Software Su
 
 ## Installation and running
  1. Download via github.com or using the command line  
- `git clone https://github.com/rlica/xia4ids`
+ `git clone https://github.com/caapage/xia4ids_traces`
  2. Compile with `make`.
  3. [optional] Add in `$HOME/.bashrc` or `$HOME/.profile`       
  `PATH=$PATH:/your_path_here/xia4ids/bin/`
  4. Run: `xia4ids config_file calibrationFile[optional]`
  5. Enjoy!
 
-
-## Getting Started
-### The 'xia4ids' converter requires a configuration file in which the user specifies:
- * runName  = location of raw data including the name of the runs, not including the numbers
- * timegate = coincidence timegate
- * cs-tac, pair-tac, flagtype = specific detector types (only for GASPware - for ROOT set them to zero)
- * reftype  = the reference type (proton pulse)
- * ref_unit  = the unit for the event time versus the reference (Low Resolution Time)
- * run_unit  = the unit for the timestamp
- * Format = the format in which to convert the data 
-      * gasp = GASPware
-      * root = ROOT
-      * list = binary event lists
-      * stat = print statistics for the entire run, the event builder will be skipped
-      * rate = only print statistics for the last buffer, the event builder will be skipped
- * Fold = the number of coincidences that will trigger an event 
- * The detector configuration depending on the selected output format (see below).
- * Correlation mode (optional) - the program will skip the event builder and will only histogram the time
- differences between the selected modules and channels. 
-
-
-See the 'etc' folder for some examples of different configuration and calibration files.
-
-To test the code, a raw data file from 152Eu source and configuration file cand be downloaded from: 
-https://cernbox.cern.ch/index.php/s/1C5pXrtTSCdneZm
-
-
-Xia4ids Kashyyk - 16/08/2023
+##Xia4ids Kashyyk - 16/08/2023
 
 This version of the sort code can be used to include a branch in the ROOT tree for trace. Onboard CFD time is also included in the HRT branch
 (eg. Time_LaBr/T_LaBr, Time_clov/T_clov etc) so this data type has been changed to be a double. This sort code version has the HRT for 500MHz modules
@@ -78,7 +51,30 @@ while the SIG outputs were connected to Mod 5 channels 6 & 7. Module 5 was a 500
 Known issues:
 - Memory leak in the event builder related to the trace vector can lead to memory usage increasing over time.This is usually only a problem when sorting large amounts of data (> ~20 GB) per run but is something that should be investigated.
 
+## Getting Started
+### The 'xia4ids' converter requires a configuration file in which the user specifies:
+ * runName  = location of raw data including the name of the runs, not including the numbers
+ * timegate = coincidence timegate
+ * cs-tac, pair-tac, flagtype = specific detector types (only for GASPware - for ROOT set them to zero)
+ * reftype  = the reference type (proton pulse)
+ * ref_unit  = the unit for the event time versus the reference (Low Resolution Time)
+ * run_unit  = the unit for the timestamp
+ * Format = the format in which to convert the data 
+      * gasp = GASPware
+      * root = ROOT
+      * list = binary event lists
+      * stat = print statistics for the entire run, the event builder will be skipped
+      * rate = only print statistics for the last buffer, the event builder will be skipped
+ * Fold = the number of coincidences that will trigger an event 
+ * The detector configuration depending on the selected output format (see below).
+ * Correlation mode (optional) - the program will skip the event builder and will only histogram the time
+ differences between the selected modules and channels. 
 
-for questions, contact Chris Page: chris.page@cern.ch / chris.page@york.ac.uk
+
+See the 'etc' folder for some examples of different configuration and calibration files.
+
+To test the code, a raw data file from 152Eu source and configuration file cand be downloaded from: 
+https://cernbox.cern.ch/index.php/s/1C5pXrtTSCdneZm
+
 
 
