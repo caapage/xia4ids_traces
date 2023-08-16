@@ -19,7 +19,7 @@ Parts of this code were modified from Pixie Acquisition and Analysis Software Su
  4. Run: `xia4ids config_file calibrationFile[optional]`
  5. Enjoy!
 
-##Xia4ids Kashyyk - 16/08/2023
+## Xia4ids Kashyyk - 16/08/2023
 
 This version of the sort code can be used to include a branch in the ROOT tree for trace. Onboard CFD time is also included in the HRT branch
 (eg. Time_LaBr/T_LaBr, Time_clov/T_clov etc) so this data type has been changed to be a double. This sort code version has the HRT for 500MHz modules
