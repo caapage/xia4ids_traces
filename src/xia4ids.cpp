@@ -57,8 +57,8 @@ int main(int argc, char **argv)
     printf("\n\t\t----------------------------------");
     printf("\n\t\t    XIA DGF Pixie-16 Converter");
     printf("\n\t\t https://github.com/rlica/xia4ids");
-    printf("\n\t\t         Version = Kashyyk         ");
-    printf("\n\t\t          16 August 2023         ");
+    printf("\n\t\t         Version = Kamino         ");
+    printf("\n\t\t          24th June 2024         ");
     printf("\n\t\t----------------------------------");
     printf("\n\n");
 
