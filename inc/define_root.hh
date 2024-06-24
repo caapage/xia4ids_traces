@@ -42,7 +42,7 @@ void define_root() {
     {
       TString traceBranchName = Form("Trace_%s_%i", root_string[i],j);
       // std::cout<<Form("branch created for i = %i and j = %i. maxnum[i] = %i and the branch is called: ", i,j,maxnum[i])
-        <<traceBranchName<<std::endl;
+        //<<traceBranchName<<std::endl;
       tree->Branch(traceBranchName,&TRACE_branch[i][j]);
     }
     tree->Branch(Form(  "Time_%s", root_string[i]), &T_branch[i], Form("T_%s[%d]/D",root_string[i],maxnum[i]));
